@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Mahasiswa</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#2563eb",
+              dark: "#0f172a",
+            },
+            boxShadow: {
+              soft: "0 20px 60px rgba(15, 23, 42, 0.10)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(18px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #2563eb, #7c3aed, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 glass border-b border-slate-200/70"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between"
+      >
+        <a href="#home" class="text-xl font-extrabold tracking-tight text-dark">
+          Student<span class="text-primary">folio.</span>
+        </a>
+
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600"
+        >
+          <a href="#about" class="hover:text-primary transition">Tentang</a>
+          <a href="#skills" class="hover:text-primary transition">Skill</a>
+          <a href="#projects" class="hover:text-primary transition">Proyek</a>
+          <a href="#experience" class="hover:text-primary transition"
+            >Pengalaman</a
+          >
+          <a href="#contact" class="hover:text-primary transition">Kontak</a>
+        </div>
+
+        <a
+          href="#contact"
+          class="hidden md:inline-flex bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20"
+        >
+          Hubungi Saya
+        </a>
+
+        <button
+          id="menuBtn"
+          class="md:hidden w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center"
+        >
+          <span class="text-2xl leading-none">☰</span>
+        </button>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-slate-200 px-5 py-4"
+      >
+        <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+          <a href="#about" class="mobile-link">Tentang</a>
+          <a href="#skills" class="mobile-link">Skill</a>
+          <a href="#projects" class="mobile-link">Proyek</a>
+          <a href="#experience" class="mobile-link">Pengalaman</a>
+          <a href="#contact" class="mobile-link">Kontak</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center pt-28 overflow-hidden"
+    >
+      <div
+        class="absolute top-24 -left-28 w-72 h-72 bg-blue-300 rounded-full blur-3xl opacity-30"
+      ></div>
+      <div
+        class="absolute bottom-10 -right-28 w-96 h-96 bg-purple-300 rounded-full blur-3xl opacity-30"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center relative z-10"
+      >
+        <div class="reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 shadow-sm mb-6"
+          >
+            <span
+              class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"
+            ></span>
+            <span class="text-sm font-semibold text-slate-600"
+              >Open for internship & collaboration</span
+            >
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-dark"
+          >
+            Halo, saya <span class="gradient-text">Nama Kamu</span><br />
+            Mahasiswa yang suka belajar dan berkarya.
+          </h1>
+
+          <p class="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
+            Portfolio ini menampilkan profil, kemampuan, pengalaman organisasi,
+            dan proyek yang pernah saya kerjakan selama kuliah.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="#projects"
+              class="inline-flex justify-center bg-primary text-white px-7 py-3.5 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/25"
+            >
+              Lihat Proyek
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex justify-center bg-white text-dark px-7 py-3.5 rounded-full font-bold border border-slate-200 hover:border-primary hover:text-primary transition"
+            >
+              Kontak Saya
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+            <div>
+              <h3 class="text-3xl font-extrabold text-dark">10+</h3>
+              <p class="text-sm text-slate-500">Proyek</p>
+            </div>
+            <div>
+              <h3 class="text-3xl font-extrabold text-dark">3+</h3>
+              <p class="text-sm text-slate-500">Organisasi</p>
+            </div>
+            <div>
+              <h3 class="text-3xl font-extrabold text-dark">2+</h3>
+              <p class="text-sm text-slate-500">Sertifikat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal relative">
+          <div class="relative mx-auto w-full max-w-md">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-[3rem] rotate-6 opacity-20"
+            ></div>
+            <div
+              class="relative bg-white rounded-[3rem] p-6 shadow-soft border border-slate-200"
+            >
+              <div
+                class="aspect-[4/5] rounded-[2.2rem] bg-gradient-to-br from-blue-100 via-slate-100 to-purple-100 flex items-center justify-center overflow-hidden"
+              >
+                <div class="text-center px-8">
+                  <div
+                    class="w-32 h-32 mx-auto rounded-full bg-white shadow-xl flex items-center justify-center text-6xl mb-6"
+                  >
+                    👨‍🎓
+                  </div>
+                  <h2 class="text-2xl font-extrabold text-dark">Nama Kamu</h2>
+                  <p class="text-slate-500 mt-2">
+                    Mahasiswa | Content Creator | Web Enthusiast
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 mt-5">
+                <div class="bg-slate-50 rounded-2xl p-4">
+                  <p class="text-xs text-slate-500">Jurusan</p>
+                  <h4 class="font-bold text-dark mt-1">Informatika</h4>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-4">
+                  <p class="text-xs text-slate-500">Lokasi</p>
+                  <h4 class="font-bold text-dark mt-1">Indonesia</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div class="reveal">
+          <p class="text-primary font-bold mb-3">Tentang Saya</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mb-6">
+            Mahasiswa aktif yang tertarik pada teknologi, desain, dan
+            pengembangan diri.
+          </h2>
+          <p class="text-slate-600 leading-relaxed mb-5">
+            Saya adalah mahasiswa yang senang mengeksplorasi hal baru,
+            mengerjakan proyek kreatif, mengikuti kegiatan organisasi, dan
+            membangun solusi sederhana yang bermanfaat.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Portfolio ini dapat digunakan untuk melamar magang, beasiswa,
+            freelance, organisasi, ataupun personal branding sebagai mahasiswa.
+          </p>
+        </div>
+
+        <div class="reveal grid sm:grid-cols-2 gap-5">
+          <div
+            class="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-soft transition"
+          >
+            <div class="text-3xl mb-4">🎯</div>
+            <h3 class="font-extrabold text-dark text-lg mb-2">Fokus</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Belajar konsisten, membangun proyek, dan mengembangkan kemampuan
+              profesional.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-soft transition"
+          >
+            <div class="text-3xl mb-4">🚀</div>
+            <h3 class="font-extrabold text-dark text-lg mb-2">Tujuan</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Mendapatkan pengalaman nyata melalui magang, kolaborasi, dan
+              proyek freelance.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-soft transition sm:col-span-2"
+          >
+            <div class="text-3xl mb-4">💡</div>
+            <h3 class="font-extrabold text-dark text-lg mb-2">Minat</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Web development, UI/UX design, public speaking, organisasi, bisnis
+              digital, dan konten kreatif.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-primary font-bold mb-3">Kemampuan</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5">
+            Skill yang Saya Kuasai
+          </h2>
+          <p class="text-slate-600">
+            Beberapa kemampuan akademik, teknis, dan soft skill yang terus saya
+            kembangkan.
+          </p>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="skill-card reveal bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-soft transition"
+          >
+            <h3 class="text-xl font-extrabold text-dark mb-4">
+              Technical Skill
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Tailwind CSS</span>
+              <span class="skill">Microsoft Office</span>
+            </div>
+          </div>
+
+          <div
+            class="skill-card reveal bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-soft transition"
+          >
+            <h3 class="text-xl font-extrabold text-dark mb-4">
+              Creative Skill
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill">Canva</span>
+              <span class="skill">Figma</span>
+              <span class="skill">Editing Video</span>
+              <span class="skill">Content Planning</span>
+            </div>
+          </div>
+
+          <div
+            class="skill-card reveal bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-soft transition"
+          >
+            <h3 class="text-xl font-extrabold text-dark mb-4">Soft Skill</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill">Komunikasi</span>
+              <span class="skill">Leadership</span>
+              <span class="skill">Teamwork</span>
+              <span class="skill">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div
+          class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal"
+        >
+          <div>
+            <p class="text-primary font-bold mb-3">Portfolio</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mb-4">
+              Proyek Pilihan
+            </h2>
+            <p class="text-slate-600 max-w-2xl">
+              Ganti isi kartu ini dengan proyek kuliah, tugas akhir, desain,
+              aplikasi, karya organisasi, atau proyek freelance kamu.
+            </p>
+          </div>
+
+          <div class="flex gap-3 flex-wrap">
+            <button class="filter-btn active-filter" data-filter="all">
+              Semua
+            </button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+            <button class="filter-btn" data-filter="academic">Akademik</button>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-7"
+          id="projectGrid"
+        >
+          <article class="project-card reveal" data-category="web">
+            <div class="project-image from-blue-500 to-cyan-400">Web</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Landing Page Organisasi
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Website sederhana untuk memperkenalkan profil, program kerja,
+                dan kontak organisasi mahasiswa.
+              </p>
+              <a href="#" class="font-bold text-primary hover:underline"
+                >Lihat Detail →</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="design">
+            <div class="project-image from-purple-500 to-pink-400">UI</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Desain Aplikasi Kampus
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Konsep UI aplikasi informasi kampus dengan tampilan modern,
+                rapi, dan mudah digunakan.
+              </p>
+              <a href="#" class="font-bold text-primary hover:underline"
+                >Lihat Detail →</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="academic">
+            <div class="project-image from-amber-500 to-orange-400">Riset</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Mini Research Project
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Penelitian kecil mengenai perilaku mahasiswa dalam menggunakan
+                teknologi digital.
+              </p>
+              <a href="#" class="font-bold text-primary hover:underline"
+                >Lihat Detail →</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web">
+            <div class="project-image from-emerald-500 to-teal-400">App</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                To-Do List App
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Aplikasi manajemen tugas sederhana menggunakan HTML, CSS, dan
+                JavaScript.
+              </p>
+              <a href="#" class="font-bold text-primary hover:underline"
+                >Lihat Detail →</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="design">
+            <div class="project-image from-rose-500 to-red-400">Poster</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Poster Event Mahasiswa
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Desain media promosi untuk seminar, webinar, dan kegiatan
+                organisasi kampus.
+              </p>
+              <a href="#" class="font-bold text-primary hover:underline"
+                >Lihat Detail →</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="academic">
+            <div class="project-image from-slate-700 to-slate-500">Paper</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Artikel Ilmiah
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Tulisan akademik mengenai isu pendidikan, teknologi, atau sosial
+                sesuai bidang kuliah.
+              </p>
+              <a href="#" class="font-bold text-primary hover:underline"
+                >Lihat Detail →</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-24 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8">
+        <div class="text-center reveal">
+          <p class="text-primary font-bold mb-3">Pengalaman</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5">
+            Riwayat Aktivitas
+          </h2>
+          <p class="text-slate-600">
+            Bagian ini cocok untuk organisasi, kepanitiaan, magang, pelatihan,
+            atau pengalaman freelance.
+          </p>
+        </div>
+
+        <div class="mt-14 space-y-6">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
+              >
+                <h3 class="text-xl font-extrabold text-dark">
+                  Anggota Organisasi Mahasiswa
+                </h3>
+                <span class="text-sm font-bold text-primary"
+                  >2024 - Sekarang</span
+                >
+              </div>
+              <p class="text-slate-600 leading-relaxed">
+                Berpartisipasi dalam perencanaan kegiatan, publikasi,
+                dokumentasi, dan kerja tim lintas divisi.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
+              >
+                <h3 class="text-xl font-extrabold text-dark">
+                  Panitia Seminar Kampus
+                </h3>
+                <span class="text-sm font-bold text-primary">2023</span>
+              </div>
+              <p class="text-slate-600 leading-relaxed">
+                Membantu persiapan acara, koordinasi peserta, publikasi, dan
+                pelaksanaan kegiatan sampai selesai.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3"
+              >
+                <h3 class="text-xl font-extrabold text-dark">
+                  Freelance Project
+                </h3>
+                <span class="text-sm font-bold text-primary">2023 - 2024</span>
+              </div>
+              <p class="text-slate-600 leading-relaxed">
+                Mengerjakan desain sederhana, konten digital, atau website kecil
+                untuk kebutuhan personal dan organisasi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="py-24 bg-dark text-white relative overflow-hidden"
+    >
+      <div
+        class="absolute -top-32 -left-32 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20"
+      ></div>
+      <div
+        class="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20"
+      ></div>
+
+      <div class="max-w-5xl mx-auto px-5 sm:px-8 relative z-10">
+        <div class="text-center reveal">
+          <p class="text-blue-300 font-bold mb-3">Kontak</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-5">
+            Mari Terhubung
+          </h2>
+          <p class="text-slate-300 max-w-2xl mx-auto">
+            Tertarik bekerja sama, menawarkan magang, atau ingin berdiskusi?
+            Silakan hubungi saya melalui form berikut.
+          </p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-2 gap-8">
+          <div
+            class="reveal bg-white/10 border border-white/10 rounded-3xl p-7"
+          >
+            <h3 class="text-2xl font-extrabold mb-6">Informasi Kontak</h3>
+            <div class="space-y-5 text-slate-300">
+              <p>📧 emailkamu@example.com</p>
+              <p>📱 +62 812-3456-7890</p>
+              <p>📍 Indonesia</p>
+              <p>🔗 linkedin.com/in/namakamu</p>
+            </div>
+          </div>
+
+          <form
+            id="contactForm"
+            class="reveal bg-white rounded-3xl p-7 text-slate-800 shadow-soft"
+          >
+            <div class="grid sm:grid-cols-2 gap-4">
+              <input
+                type="text"
+                id="name"
+                placeholder="Nama"
+                class="form-input"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                class="form-input"
+                required
+              />
+            </div>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Subjek"
+              class="form-input mt-4"
+              required
+            />
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Pesan"
+              class="form-input mt-4 resize-none"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full mt-5 bg-primary text-white py-3.5 rounded-2xl font-extrabold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20"
+            >
+              Kirim Pesan
+            </button>
+            <p
+              id="formMessage"
+              class="hidden mt-4 text-sm font-semibold text-green-600"
+            ></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-7 text-center text-sm">
+      <p>
+        © 2026 Studentfolio. Dibuat dengan HTML, Tailwind CSS, dan JavaScript.
+      </p>
+    </footer>
+
+    <button
+      id="toTop"
+      class="hidden fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-blue-600/30 font-bold hover:bg-blue-700 transition z-50"
+    >
+      ↑
+    </button>
+
+    <script>
+      // Mobile Menu
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Reveal Animation
+      const revealElements = document.querySelectorAll(".reveal");
+
+      function revealOnScroll() {
+        revealElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementTop < windowHeight - 100) {
+            element.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+
+      // Project Filter
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((btn) => btn.classList.remove("active-filter"));
+          button.classList.add("active-filter");
+
+          const filter = button.getAttribute("data-filter");
+
+          projectCards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+
+            if (filter === "all" || filter === category) {
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+              }, 100);
+            } else {
+              card.style.opacity = "0";
+              card.style.transform = "translateY(20px)";
+              setTimeout(() => {
+                card.style.display = "none";
+              }, 250);
+            }
+          });
+        });
+      });
+
+      // Contact Form Demo
+      const contactForm = document.getElementById("contactForm");
+      const formMessage = document.getElementById("formMessage");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        formMessage.textContent =
+          "Pesan berhasil disiapkan. Hubungkan form ini ke EmailJS, WhatsApp API, atau backend agar benar-benar terkirim.";
+        formMessage.classList.remove("hidden");
+        contactForm.reset();
+      });
+
+      // Back to Top Button
+      const toTop = document.getElementById("toTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          toTop.classList.remove("hidden");
+        } else {
+          toTop.classList.add("hidden");
+        }
+      });
+
+      toTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Reusable Tailwind Classes
+      document.querySelectorAll(".skill").forEach((skill) => {
+        skill.className =
+          "inline-flex px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-bold border border-blue-100";
+      });
+
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.className +=
+          " px-5 py-2.5 rounded-full border border-slate-200 font-bold text-sm hover:border-primary hover:text-primary transition";
+      });
+
+      document.querySelectorAll(".active-filter").forEach((btn) => {
+        btn.classList.add("bg-primary", "text-white", "border-primary");
+      });
+
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.className +=
+          " bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-soft transition duration-300";
+      });
+
+      document.querySelectorAll(".project-image").forEach((image) => {
+        image.className +=
+          " h-48 bg-gradient-to-br flex items-center justify-center text-white text-4xl font-extrabold";
+      });
+
+      document.querySelectorAll(".timeline-item").forEach((item) => {
+        item.className += " relative pl-8 border-l-2 border-blue-200";
+      });
+
+      document.querySelectorAll(".timeline-dot").forEach((dot) => {
+        dot.className +=
+          " absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary border-4 border-slate-50";
+      });
+
+      document.querySelectorAll(".form-input").forEach((input) => {
+        input.className +=
+          " w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 outline-none focus:border-primary focus:ring-4 focus:ring-blue-100 transition";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page UMKM Minimalis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#166534",
+              dark: "#0f172a",
+              soft: "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: all 0.7s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-800">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between"
+      >
+        <a href="#home" class="text-xl font-extrabold text-dark">
+          Template<span class="text-primary">UMKM</span>
+        </a>
+
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600"
+        >
+          <a href="#produk" class="hover:text-primary transition">Produk</a>
+          <a href="#tentang" class="hover:text-primary transition">Tentang</a>
+          <a href="#keunggulan" class="hover:text-primary transition"
+            >Keunggulan</a
+          >
+          <a href="#testimoni" class="hover:text-primary transition"
+            >Testimoni</a
+          >
+          <a href="#kontak" class="hover:text-primary transition">Kontak</a>
+        </div>
+
+        <a
+          href="https://wa.me/6285753850636?text=Halo%20PortoSite%2C%20saya%20ingin%20memesan%20website%20portofolio.%20Bisa%20dibantu%20informasinya%3F"
+          target="_blank"
+          class="hidden md:inline-flex bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-green-800 transition"
+        >
+          WhatsApp
+        </a>
+
+        <button
+          id="menuBtn"
+          class="md:hidden w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-xl"
+        >
+          ☰
+        </button>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-slate-200 px-5 py-4"
+      >
+        <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+          <a href="#produk" class="mobile-link">Produk</a>
+          <a href="#tentang" class="mobile-link">Tentang</a>
+          <a href="#keunggulan" class="mobile-link">Keunggulan</a>
+          <a href="#testimoni" class="mobile-link">Testimoni</a>
+          <a href="#kontak" class="mobile-link">Kontak</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="pt-32 pb-20 bg-soft">
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div class="reveal">
+          <p
+            class="inline-flex bg-green-100 text-primary px-4 py-2 rounded-full text-sm font-bold mb-5"
+          >
+            Produk lokal berkualitas
+          </p>
+
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-tight"
+          >
+            Solusi sederhana untuk memperkenalkan bisnis UMKM Anda.
+          </h1>
+
+          <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+            Landing page minimalis untuk menampilkan produk, keunggulan,
+            testimoni, lokasi, dan kontak bisnis secara profesional.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="#produk"
+              class="inline-flex justify-center bg-primary text-white px-7 py-3.5 rounded-full font-bold hover:bg-green-800 transition"
+            >
+              Lihat Produk
+            </a>
+            <a
+              href="https://wa.me/6285753850636?text=Halo%20PortoSite%2C%20saya%20ingin%20memesan%20website%20portofolio.%20Bisa%20dibantu%20informasinya%3F"
+              target="_blank"
+              class="inline-flex justify-center bg-white text-primary px-7 py-3.5 rounded-full font-bold border border-green-200 hover:border-primary transition"
+            >
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div
+            class="bg-white rounded-3xl p-4 shadow-xl border border-slate-200"
+          >
+            <div
+              class="aspect-[4/3] rounded-2xl bg-slate-100 flex items-center justify-center text-7xl"
+            >
+              🛍️
+            </div>
+            <div class="mt-5 grid grid-cols-3 gap-3">
+              <div class="bg-soft rounded-2xl p-4 text-center">
+                <h3 class="text-2xl font-extrabold text-dark">500+</h3>
+                <p class="text-xs text-slate-500 font-semibold">Pelanggan</p>
+              </div>
+              <div class="bg-soft rounded-2xl p-4 text-center">
+                <h3 class="text-2xl font-extrabold text-dark">25+</h3>
+                <p class="text-xs text-slate-500 font-semibold">Produk</p>
+              </div>
+              <div class="bg-soft rounded-2xl p-4 text-center">
+                <h3 class="text-2xl font-extrabold text-dark">4.9</h3>
+                <p class="text-xs text-slate-500 font-semibold">Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk -->
+    <section id="produk" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-primary font-bold mb-3">Produk Unggulan</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark">
+            Tampilkan produk terbaik bisnis Anda
+          </h2>
+          <p class="mt-4 text-slate-600">
+            Ganti gambar, nama produk, dan deskripsi sesuai kebutuhan usaha
+            Anda.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="product-card reveal">
+            <div class="product-image">🍪</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Produk Pertama
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Deskripsi singkat produk, keunggulan utama, atau manfaat yang
+                ditawarkan.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="product-image">🥤</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Produk Kedua
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Cocok untuk makanan, minuman, fashion, kerajinan, atau jasa
+                lokal.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="product-image">🎁</div>
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-dark mb-2">
+                Produk Ketiga
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Tampilkan produk unggulan agar pengunjung mudah memahami bisnis
+                Anda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="py-20 bg-soft">
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div class="reveal">
+          <div
+            class="aspect-[4/3] rounded-3xl bg-white border border-slate-200 shadow-lg flex items-center justify-center text-7xl"
+          >
+            🏪
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="text-primary font-bold mb-3">Tentang Kami</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark mb-5">
+            Kami hadir untuk memberikan produk terbaik dengan pelayanan yang
+            ramah.
+          </h2>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Ceritakan secara singkat tentang usaha Anda, mulai dari awal
+            berdiri, nilai yang dipegang, sampai alasan pelanggan perlu memilih
+            produk Anda.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Bagian ini cocok untuk membangun kepercayaan pelanggan tanpa membuat
+            halaman terasa penuh atau rumit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section id="keunggulan" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-primary font-bold mb-3">Keunggulan</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark">
+            Kenapa memilih kami?
+          </h2>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="feature-card reveal">
+            <div class="feature-icon">✓</div>
+            <h3>Harga Terjangkau</h3>
+            <p>
+              Produk berkualitas dengan harga yang tetap ramah untuk pelanggan.
+            </p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon">✓</div>
+            <h3>Kualitas Terjaga</h3>
+            <p>
+              Setiap produk dibuat atau dipilih dengan memperhatikan kualitas.
+            </p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon">✓</div>
+            <h3>Pelayanan Cepat</h3>
+            <p>
+              Mudah dihubungi melalui WhatsApp untuk tanya produk atau informasi
+              bisnis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="py-20 bg-soft">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-primary font-bold mb-3">Testimoni</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark">
+            Apa kata pelanggan?
+          </h2>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="review-card reveal">
+            <p>“Produknya bagus, respon cepat, dan pelayanannya ramah.”</p>
+            <h3>Rina</h3>
+          </div>
+
+          <div class="review-card reveal">
+            <p>
+              “Harga terjangkau dan kualitasnya sesuai harapan. Recommended.”
+            </p>
+            <h3>Andi</h3>
+          </div>
+
+          <div class="review-card reveal">
+            <p>“Mudah dihubungi dan informasi produknya jelas.”</p>
+            <h3>Salsa</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 bg-primary text-white">
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div class="reveal">
+          <p class="font-bold mb-3 text-green-100">Kontak Kami</p>
+          <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-5">
+            Tertarik dengan produk kami?
+          </h2>
+          <p class="text-green-50 leading-relaxed text-lg">
+            Hubungi kami melalui WhatsApp atau kunjungi lokasi usaha untuk
+            informasi lebih lanjut.
+          </p>
+
+          <a
+            href="https://wa.me/6285753850636?text=Halo%20PortoSite%2C%20saya%20ingin%20memesan%20website%20portofolio.%20Bisa%20dibantu%20informasinya%3F"
+            target="_blank"
+            class="mt-8 inline-flex bg-white text-primary px-8 py-4 rounded-full font-extrabold hover:bg-green-50 transition"
+          >
+            Chat WhatsApp
+          </a>
+        </div>
+
+        <div class="reveal bg-white text-slate-800 rounded-3xl p-7 shadow-xl">
+          <h3 class="text-2xl font-extrabold text-dark mb-5">
+            Informasi Bisnis
+          </h3>
+          <div class="space-y-4 text-slate-600">
+            <p>📍 Jl. Contoh UMKM No. 12, Indonesia</p>
+            <p>🕘 Buka setiap hari, 09.00 - 21.00</p>
+            <p>📱 +62 812-3456-7890</p>
+            <p>📸 @umkmkita.id</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="py-7 bg-white text-center text-sm text-slate-500 border-t border-slate-200"
+    >
+      <p>© 2026 UMKMKita. Landing Page Template.</p>
+    </footer>
+
+    <a
+      href="https://wa.me/6285753850636?text=Halo%20PortoSite%2C%20saya%20ingin%20memesan%20website%20portofolio.%20Bisa%20dibantu%20informasinya%3F"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 bg-primary text-white px-5 py-3 rounded-full font-bold shadow-lg hover:bg-green-800 transition"
+    >
+      WhatsApp
+    </a>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      function revealOnScroll() {
+        revealElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementTop < windowHeight - 90) {
+            element.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+
+      document.querySelectorAll(".product-card").forEach((card) => {
+        card.className +=
+          " bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300";
+      });
+
+      document.querySelectorAll(".product-image").forEach((image) => {
+        image.className +=
+          " h-56 bg-soft flex items-center justify-center text-7xl";
+      });
+
+      document.querySelectorAll(".feature-card").forEach((card) => {
+        card.className +=
+          " bg-white rounded-3xl border border-slate-200 p-7 shadow-sm";
+        card.querySelector("h3").className =
+          "text-xl font-extrabold text-dark mb-2";
+        card.querySelector("p").className = "text-slate-600 leading-relaxed";
+      });
+
+      document.querySelectorAll(".feature-icon").forEach((icon) => {
+        icon.className +=
+          " w-12 h-12 rounded-full bg-green-100 text-primary flex items-center justify-center font-black text-xl mb-5";
+      });
+
+      document.querySelectorAll(".review-card").forEach((card) => {
+        card.className +=
+          " bg-white rounded-3xl border border-slate-200 p-7 shadow-sm";
+        card.querySelector("p").className =
+          "text-slate-600 leading-relaxed mb-5";
+        card.querySelector("h3").className = "font-extrabold text-dark";
+      });
+    </script>
+  </body>
+</html>

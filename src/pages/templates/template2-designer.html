@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designer Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            ink: '#111111',
+            cream: '#f8f3e9',
+            neon: '#d7ff3f',
+            coral: '#ff6b57',
+            violet: '#7c3aed',
+          },
+          boxShadow: {
+            hard: '8px 8px 0 #111111',
+            soft: '0 25px 70px rgba(17,17,17,.14)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f3e9;
+      color: #111111;
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .noise {
+      background-image: radial-gradient(#111111 0.8px, transparent 0.8px);
+      background-size: 18px 18px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px) scale(.98);
+      transition: all .75s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .marquee-track {
+      animation: marquee 22s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .blob {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-18px) rotate(3deg); }
+    }
+
+    .cursor-dot {
+      position: fixed;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #d7ff3f;
+      border: 2px solid #111111;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s;
+      mix-blend-mode: difference;
+    }
+  </style>
+</head>
+
+<body class="font-body overflow-x-hidden">
+  <div id="cursor" class="cursor-dot hidden lg:block"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-cream/90 backdrop-blur-xl border-b-2 border-ink">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+      <a href="#home" class="font-display text-2xl font-bold tracking-tight">
+        TEMPLATE<span class="text-coral"> DESIGNER GRAFIS</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wide">
+        <a href="#work" class="hover:text-coral transition">Work</a>
+        <a href="#services" class="hover:text-coral transition">Services</a>
+        <a href="#about" class="hover:text-coral transition">About</a>
+        <a href="#tools" class="hover:text-coral transition">Tools</a>
+        <a href="#contact" class="hover:text-coral transition">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden md:inline-flex bg-ink text-cream px-5 py-3 rounded-full font-bold hover:bg-coral hover:text-ink transition border-2 border-ink">
+        Hire Me
+      </a>
+
+      <button id="menuBtn" class="md:hidden w-11 h-11 rounded-full bg-neon border-2 border-ink font-black shadow-hard">
+        ☰
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-cream border-t-2 border-ink px-5 py-5">
+      <div class="flex flex-col gap-4 font-bold uppercase">
+        <a class="mobile-link" href="#work">Work</a>
+        <a class="mobile-link" href="#services">Services</a>
+        <a class="mobile-link" href="#about">About</a>
+        <a class="mobile-link" href="#tools">Tools</a>
+        <a class="mobile-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative min-h-screen pt-32 pb-16 flex items-center overflow-hidden">
+    <div class="absolute inset-0 noise opacity-[0.05]"></div>
+    <div class="absolute top-32 right-10 w-28 h-28 bg-neon rounded-full border-2 border-ink blob"></div>
+    <div class="absolute bottom-20 left-8 w-24 h-24 bg-coral rounded-[2rem] rotate-12 border-2 border-ink blob"></div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center relative z-10">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-3 bg-neon border-2 border-ink rounded-full px-5 py-2.5 shadow-hard mb-7 rotate-[-1deg]">
+          <span class="w-3 h-3 rounded-full bg-ink"></span>
+          <span class="font-bold uppercase text-sm">Graphic • UI • Branding</span>
+        </div>
+
+        <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-bold leading-[.9] tracking-tight">
+          Visual Designer<br>
+          <span class="inline-block bg-coral text-cream px-4 pb-2 border-2 border-ink rotate-[-2deg] shadow-hard mt-3">Portfolio</span>
+        </h1>
+
+        <p class="mt-8 text-lg sm:text-xl max-w-2xl leading-relaxed text-zinc-700">
+          Saya membantu brand, organisasi, dan bisnis kecil membangun visual yang rapi, berkarakter, dan mudah diingat melalui desain grafis, UI, dan identitas visual.
+        </p>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="#work" class="bg-ink text-cream border-2 border-ink px-8 py-4 rounded-full font-bold hover:bg-violet transition shadow-hard text-center">
+            Lihat Karya
+          </a>
+          <a href="#services" class="bg-cream text-ink border-2 border-ink px-8 py-4 rounded-full font-bold hover:bg-neon transition text-center">
+            Layanan Desain
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal relative">
+        <div class="relative mx-auto max-w-md">
+          <div class="absolute -top-8 -left-8 bg-neon border-2 border-ink rounded-3xl px-5 py-3 font-display font-bold shadow-hard rotate-[-8deg] z-20">
+            Available
+          </div>
+
+          <div class="bg-ink rounded-[2.5rem] p-4 rotate-2 shadow-soft border-2 border-ink">
+            <div class="bg-cream rounded-[2rem] overflow-hidden border-2 border-ink">
+              <div class="h-72 bg-gradient-to-br from-coral via-violet to-ink p-7 flex flex-col justify-between text-cream">
+                <div class="flex justify-between items-start">
+                  <div class="w-16 h-16 rounded-full bg-neon border-2 border-ink"></div>
+                  <div class="text-right font-display font-bold text-2xl">01</div>
+                </div>
+                <div>
+                  <p class="uppercase tracking-widest text-sm font-bold opacity-80">Featured Identity</p>
+                  <h2 class="font-display text-4xl font-bold leading-none mt-2">Bold Creative Studio</h2>
+                </div>
+              </div>
+              <div class="p-6 grid grid-cols-3 gap-3">
+                <div class="h-20 bg-neon rounded-2xl border-2 border-ink"></div>
+                <div class="h-20 bg-coral rounded-2xl border-2 border-ink"></div>
+                <div class="h-20 bg-violet rounded-2xl border-2 border-ink"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-7 -right-5 bg-cream border-2 border-ink rounded-3xl px-5 py-4 shadow-hard -rotate-3">
+            <p class="font-bold text-sm">30+ Design Assets</p>
+            <p class="text-xs text-zinc-600">Poster, logo, UI, branding</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="bg-ink text-cream border-y-2 border-ink overflow-hidden py-4">
+    <div class="marquee-track flex gap-10 whitespace-nowrap font-display font-bold text-2xl uppercase">
+      <span>Branding</span><span>✦</span><span>Poster Design</span><span>✦</span><span>UI Design</span><span>✦</span><span>Social Media</span><span>✦</span>
+      <span>Branding</span><span>✦</span><span>Poster Design</span><span>✦</span><span>UI Design</span><span>✦</span><span>Social Media</span><span>✦</span>
+    </div>
+  </div>
+
+  <!-- Work -->
+  <section id="work" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 reveal">
+        <div>
+          <p class="font-bold uppercase tracking-widest text-coral mb-3">Selected Work</p>
+          <h2 class="font-display text-4xl sm:text-6xl font-bold tracking-tight">Karya Desain Pilihan</h2>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <button class="filter-btn active-filter" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="ui">UI</button>
+          <button class="filter-btn" data-filter="poster">Poster</button>
+        </div>
+      </div>
+
+      <div id="projectGrid" class="mt-14 grid md:grid-cols-2 gap-8">
+        <article class="project-card reveal" data-category="branding">
+          <div class="project-visual bg-coral">
+            <span>BRAND</span>
+          </div>
+          <div class="p-6">
+            <p class="font-bold text-sm uppercase text-zinc-500 mb-2">Visual Identity</p>
+            <h3 class="font-display text-3xl font-bold mb-3">Kopi Senja Branding</h3>
+            <p class="text-zinc-600 leading-relaxed">Konsep logo, palet warna, tipografi, dan mockup visual untuk brand coffee shop lokal.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="ui">
+          <div class="project-visual bg-violet text-cream">
+            <span>UI/UX</span>
+          </div>
+          <div class="p-6">
+            <p class="font-bold text-sm uppercase text-zinc-500 mb-2">Mobile App</p>
+            <h3 class="font-display text-3xl font-bold mb-3">Campus Event App</h3>
+            <p class="text-zinc-600 leading-relaxed">Desain interface aplikasi event kampus dengan alur pendaftaran yang simpel dan modern.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="poster">
+          <div class="project-visual bg-neon">
+            <span>POSTER</span>
+          </div>
+          <div class="p-6">
+            <p class="font-bold text-sm uppercase text-zinc-500 mb-2">Event Design</p>
+            <h3 class="font-display text-3xl font-bold mb-3">Seminar Creative Talk</h3>
+            <p class="text-zinc-600 leading-relaxed">Poster digital untuk seminar kreatif dengan komposisi bold, warna kontras, dan layout dinamis.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="branding">
+          <div class="project-visual bg-ink text-cream">
+            <span>LOGO</span>
+          </div>
+          <div class="p-6">
+            <p class="font-bold text-sm uppercase text-zinc-500 mb-2">Logo Design</p>
+            <h3 class="font-display text-3xl font-bold mb-3">Portosite Studio</h3>
+            <p class="text-zinc-600 leading-relaxed">Eksplorasi logo modern untuk layanan pembuatan website portfolio dan landing page.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 bg-ink text-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <p class="font-bold uppercase tracking-widest text-neon mb-3">Services</p>
+        <h2 class="font-display text-4xl sm:text-6xl font-bold">Apa yang Bisa Saya Bantu?</h2>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        <div class="service-card reveal">
+          <div class="text-5xl mb-6">✦</div>
+          <h3 class="font-display text-3xl font-bold mb-3">Brand Identity</h3>
+          <p class="text-zinc-300 leading-relaxed">Logo, warna, tipografi, moodboard, dan guideline visual sederhana untuk brand.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="text-5xl mb-6">◐</div>
+          <h3 class="font-display text-3xl font-bold mb-3">Social Media</h3>
+          <p class="text-zinc-300 leading-relaxed">Template feed, carousel, story, poster event, dan konten promosi digital.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="text-5xl mb-6">▣</div>
+          <h3 class="font-display text-3xl font-bold mb-3">UI Design</h3>
+          <p class="text-zinc-300 leading-relaxed">Desain landing page, website portfolio, aplikasi mobile, dan prototype sederhana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-center">
+      <div class="reveal">
+        <div class="aspect-square bg-neon border-2 border-ink rounded-[3rem] shadow-hard flex items-center justify-center rotate-[-2deg]">
+          <div class="text-center">
+            <div class="text-8xl mb-5">🎨</div>
+            <h3 class="font-display text-4xl font-bold">Designer</h3>
+            <p class="font-bold text-zinc-600 mt-2">Based in Indonesia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="font-bold uppercase tracking-widest text-coral mb-3">About Me</p>
+        <h2 class="font-display text-4xl sm:text-6xl font-bold leading-tight mb-7">
+          Saya percaya desain yang bagus bukan cuma indah, tapi juga jelas dan punya tujuan.
+        </h2>
+        <p class="text-lg text-zinc-700 leading-relaxed mb-6">
+          Saya adalah designer yang suka mengeksplorasi warna, layout, tipografi, dan visual storytelling. Fokus saya adalah membuat desain yang terasa hidup, mudah dipahami, dan punya karakter kuat.
+        </p>
+        <p class="text-lg text-zinc-700 leading-relaxed">
+          Portfolio ini cocok untuk graphic designer, UI designer, content designer, brand designer, atau mahasiswa desain yang ingin menampilkan karya secara profesional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools" class="py-24 bg-white border-y-2 border-ink">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <p class="font-bold uppercase tracking-widest text-violet mb-3">Design Toolkit</p>
+        <h2 class="font-display text-4xl sm:text-6xl font-bold">Tools & Skill</h2>
+      </div>
+
+      <div class="mt-14 flex flex-wrap justify-center gap-4 reveal">
+        <span class="tool-pill">Figma</span>
+        <span class="tool-pill">Canva</span>
+        <span class="tool-pill">Adobe Illustrator</span>
+        <span class="tool-pill">Photoshop</span>
+        <span class="tool-pill">UI Design</span>
+        <span class="tool-pill">Branding</span>
+        <span class="tool-pill">Typography</span>
+        <span class="tool-pill">Layouting</span>
+        <span class="tool-pill">Motion Basic</span>
+        <span class="tool-pill">Content Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-coral border-b-2 border-ink">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <div class="reveal">
+        <p class="font-bold uppercase tracking-widest mb-3">Let's Collaborate</p>
+        <h2 class="font-display text-5xl sm:text-7xl font-bold leading-none mb-8">
+          Punya ide visual?<br>Yuk kita desain.
+        </h2>
+        <p class="text-lg max-w-2xl mx-auto text-zinc-800 leading-relaxed mb-10">
+          Terbuka untuk project desain, magang, freelance, kolaborasi organisasi, dan personal branding.
+        </p>
+      </div>
+
+      <form id="contactForm" class="reveal bg-cream border-2 border-ink rounded-[2rem] p-6 sm:p-8 shadow-hard max-w-3xl mx-auto text-left">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input id="name" class="form-input" type="text" placeholder="Nama" required>
+          <input id="email" class="form-input" type="email" placeholder="Email" required>
+        </div>
+        <input id="subject" class="form-input mt-4" type="text" placeholder="Jenis project / kebutuhan" required>
+        <textarea id="message" class="form-input mt-4 resize-none" rows="5" placeholder="Ceritakan brief singkat project kamu" required></textarea>
+        <button class="mt-5 w-full bg-ink text-cream border-2 border-ink rounded-full py-4 font-bold hover:bg-neon hover:text-ink transition" type="submit">
+          Kirim Brief
+        </button>
+        <p id="formMessage" class="hidden mt-4 font-bold text-green-700"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-ink text-cream py-7 text-center font-bold">
+    <p>© 2026 DESAINKU — Designer Portfolio Template</p>
+  </footer>
+
+  <button id="toTop" class="hidden fixed bottom-6 right-6 w-12 h-12 rounded-full bg-neon border-2 border-ink text-ink font-black shadow-hard z-50">
+    ↑
+  </button>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      revealElements.forEach(element => {
+        const top = element.getBoundingClientRect().top;
+        if (top < window.innerHeight - 90) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active-filter', 'bg-ink', 'text-cream');
+        });
+
+        button.classList.add('active-filter', 'bg-ink', 'text-cream');
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.style.display = match ? 'block' : 'none';
+        });
+      });
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMessage.textContent = 'Brief berhasil disiapkan. Hubungkan form ini ke EmailJS, WhatsApp, atau backend agar bisa terkirim.';
+      formMessage.classList.remove('hidden');
+      contactForm.reset();
+    });
+
+    const toTop = document.getElementById('toTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        toTop.classList.remove('hidden');
+      } else {
+        toTop.classList.add('hidden');
+      }
+    });
+
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const cursor = document.getElementById('cursor');
+
+    window.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .project-card').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        cursor.style.width = '34px';
+        cursor.style.height = '34px';
+      });
+      item.addEventListener('mouseleave', () => {
+        cursor.style.width = '18px';
+        cursor.style.height = '18px';
+      });
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.className += ' px-5 py-2.5 rounded-full border-2 border-ink font-bold hover:bg-neon transition';
+    });
+
+    document.querySelector('.active-filter')?.classList.add('bg-ink', 'text-cream');
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.className += ' bg-cream border-2 border-ink rounded-[2rem] overflow-hidden shadow-hard hover:-translate-y-2 transition duration-300';
+    });
+
+    document.querySelectorAll('.project-visual').forEach(visual => {
+      visual.className += ' h-72 border-b-2 border-ink flex items-center justify-center font-display text-5xl sm:text-6xl font-bold tracking-tight';
+    });
+
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.className += ' bg-zinc-900 border-2 border-zinc-700 rounded-[2rem] p-7 hover:bg-zinc-800 transition';
+    });
+
+    document.querySelectorAll('.tool-pill').forEach(pill => {
+      pill.className += ' bg-neon border-2 border-ink rounded-full px-6 py-3 font-bold shadow-hard';
+    });
+
+    document.querySelectorAll('.form-input').forEach(input => {
+      input.className += ' w-full bg-white border-2 border-ink rounded-2xl px-5 py-4 outline-none focus:bg-neon transition font-semibold placeholder:text-zinc-500';
+    });
+  </script>
+</body>
+</html>

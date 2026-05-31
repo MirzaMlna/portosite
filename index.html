@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortoSite - Website Portofolio Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#16275A",
+              navyDark: "#101D44",
+              orange: "#F5A12B",
+              soft: "#F6F8FF",
+            },
+            fontFamily: {
+              sans: ["Inter", "Poppins", "Arial", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 24px 70px rgba(22, 39, 90, 0.14)",
+            },
+            animation: {
+              float: "float 4s ease-in-out infinite",
+              blob: "blob 8s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0) rotate(2deg)" },
+                "50%": { transform: "translateY(-18px) rotate(-1deg)" },
+              },
+              blob: {
+                "0%, 100%": { transform: "translate(0,0) scale(1)" },
+                "50%": { transform: "translate(25px,-35px) scale(1.08)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
