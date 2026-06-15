@@ -6,14 +6,14 @@ const packageItems = [
     name: "Starter",
     price: "Rp99K",
     description: "Landing page portofolio sederhana.",
-    features: ["1 halaman", "Responsive design", "Link sosial media"],
+    features: ["2-4 Section", "Responsive design", "Animasi Standar"],
     featured: false,
   },
   {
     name: "Professional",
     price: "Rp199K",
     description: "Website portofolio lengkap dan premium.",
-    features: ["3-5 section", "Animasi modern", "Project showcase"],
+    features: ["4-6 Section", "Animasi modern", "Project showcase"],
     featured: true,
   },
   {
