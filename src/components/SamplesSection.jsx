@@ -18,11 +18,11 @@ const sampleItems = [
       "Showcase visual untuk case study, process design, dan galeri karya.",
   },
   {
-    name: "Portofolio Content Creator",
-    role: "Content Creator & Influencer",
-    gradient: "from-cyan-500 to-emerald-500",
+    name: "Landing Page UMKM",
+    role: "Bisnis Lokal",
+    gradient: "from-green-500 to-emerald-500",
     description:
-      "Menampilkan personal branding, statistik media sosial, portofolio konten, serta kolaborasi brand secara profesional.",
+      "Landing page bisnis untuk produk, benefit, testimoni, dan CTA pemesanan lewat WhatsApp.",
   },
 ];
 

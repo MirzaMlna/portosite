@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SectionHeader from "./SectionHeader.jsx";
 import { createWhatsAppLink } from "../utils/whatsapp.js";
 
@@ -5,22 +7,25 @@ const packageItems = [
   {
     name: "Starter",
     price: "Rp99K",
-    description: "Landing page portofolio sederhana.",
-    features: ["2-4 Section", "Responsive design", "Animasi Standar"],
+    description: "Landing page portofolio sederhana dengan 4 section.",
+    features: ["4 Section", "Responsive design", "Animasi Standar"],
+    templatePath: "/contoh/template/paket-starter",
     featured: false,
   },
   {
     name: "Professional",
     price: "Rp199K",
-    description: "Website portofolio lengkap dan premium.",
-    features: ["4-6 Section", "Animasi modern", "Project showcase"],
+    description: "Website portofolio lengkap dan premium dengan 6 section.",
+    features: ["6 Section", "Animasi modern", "Project showcase"],
+    templatePath: "/contoh/template/paket-professional",
     featured: true,
   },
   {
     name: "Custom",
     price: "Rp349K+",
-    description: "Untuk kebutuhan khusus dan tampilan eksklusif.",
-    features: ["Desain custom", "Copywriting basic", "Konsultasi konsep"],
+    description: "Website custom eksklusif dengan 10 section.",
+    features: ["10 Section", "Copywriting basic", "Konsultasi konsep"],
+    templatePath: "/contoh/template/paket-custom",
     featured: false,
   },
 ];
@@ -61,23 +66,33 @@ export default function PackagesSection() {
               </p>
               <ul className="space-y-3 text-slate-500 mt-8">
                 {websitePackage.features.map((feature) => (
-                  <li key={feature}>
-                    <span aria-hidden="true">&#10003;</span> {feature}
+                  <li key={feature} className="flex items-center gap-2">
+                    <i className="bi bi-check-circle-fill text-orange" aria-hidden="true" />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <a
-                href={createWhatsAppLink(
-                  `Halo PortoSite, saya ingin memesan paket ${websitePackage.name} untuk website portofolio. Bisa dibantu informasinya?`
-                )}
-                target="_blank"
-                rel="noreferrer"
-                className={`inline-block mt-8 text-white px-6 py-3 rounded-full font-black ${
-                  websitePackage.featured ? "bg-orange" : "bg-navy"
-                }`}
-              >
-                Pilih Paket
-              </a>
+              <div className="mt-8 flex flex-col gap-3">
+                <Link
+                  to={websitePackage.templatePath}
+                  className="inline-flex items-center justify-center rounded-full border-2 border-orange px-6 py-3 text-center font-black text-orange transition hover:bg-orange hover:text-white"
+                >
+                  Contoh Website Paket Ini
+                </Link>
+
+                <a
+                  href={createWhatsAppLink(
+                    `Halo PortoSite, saya ingin memesan paket ${websitePackage.name} untuk website portofolio. Bisa dibantu informasinya?`
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-center font-black text-white ${
+                    websitePackage.featured ? "bg-orange" : "bg-navy"
+                  }`}
+                >
+                  Pilih Paket
+                </a>
+              </div>
             </article>
           ))}
         </div>

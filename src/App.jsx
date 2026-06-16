@@ -1,21 +1,26 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import WebsiteExamples from "./pages/WebsiteExamples.jsx";
 import Home from "./pages/Home.jsx";
-import TemplatePreview from "./pages/TemplatePreview.jsx";
+import TemplatePage from "./pages/TemplatePage.jsx";
 
 export default function App() {
+  const location = useLocation();
+  const isTemplatePage = location.pathname.startsWith("/contoh/template/");
+
   return (
     <div className="bg-white text-slate-900 overflow-x-hidden">
-      <Navbar />
+      <ScrollToTop />
+      {!isTemplatePage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contoh" element={<WebsiteExamples />} />
-        <Route path="/contoh/template/:templateSlug" element={<TemplatePreview />} />
+        <Route path="/contoh/template/:templateSlug" element={<TemplatePage />} />
       </Routes>
-      <Footer />
+      {!isTemplatePage && <Footer />}
     </div>
   );
 }

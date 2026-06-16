@@ -9,7 +9,7 @@ const portfolioSamples = [
       "Portfolio rapi untuk profil mahasiswa, pengalaman, skill, dan kontak.",
     gradient: "from-blue-500 to-cyan-500",
     features: ["Profil singkat", "Pengalaman", "Skill", "Responsive"],
-    templatePath: "/contoh/template/mahasiswa",
+    templatePath: "https://mirzamlna.github.io/portfolio/",
   },
   {
     id: 2,
@@ -23,16 +23,6 @@ const portfolioSamples = [
   },
   {
     id: 3,
-    name: "Content Creator",
-    role: "Template personal brand",
-    description:
-      "Portfolio untuk kreator dengan highlight konten, statistik, dan link sosial.",
-    gradient: "from-amber-500 to-yellow-500",
-    features: ["Media gallery", "Social links", "Stats", "CTA"],
-    templatePath: "/contoh/template/content-creator",
-  },
-  {
-    id: 4,
     name: "Landing Page UMKM",
     role: "Template bisnis lokal",
     description:

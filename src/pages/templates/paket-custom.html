@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Custom</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              ink: "#070a12",
+              lime: "#a3e635",
+              flame: "#ff5a1f",
+              aqua: "#22d3ee",
+              violet: "#8b5cf6",
+            },
+            boxShadow: {
+              glow: "0 30px 90px rgba(34, 211, 238, 0.22)",
+              warm: "0 30px 90px rgba(255, 90, 31, 0.24)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .grain::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 60;
+        opacity: 0.08;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+        background-size: 38px 38px;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(20px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gradient-title {
+        background: linear-gradient(135deg, #ffffff, #a3e635, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .marquee-track {
+        animation: marquee 24s linear infinite;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .float-card {
+        animation: floatCard 5s ease-in-out infinite;
+      }
+
+      @keyframes floatCard {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="grain bg-ink text-white overflow-x-hidden">
+    <header
+      class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-ink/75 backdrop-blur-2xl"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
+      >
+        <a href="#home" class="text-xl font-black tracking-tight">
+          Keira<span class="text-lime">Studio</span>
+        </a>
+
+        <div class="hidden items-center gap-7 text-sm font-bold text-white/70 md:flex">
+          <a href="#story" class="hover:text-lime transition">Story</a>
+          <a href="#services" class="hover:text-lime transition">Layanan</a>
+          <a href="#work" class="hover:text-lime transition">Showcase</a>
+          <a href="#process" class="hover:text-lime transition">Process</a>
+          <a href="#contact" class="hover:text-lime transition">Kontak</a>
+        </div>
+
+        <a
+          href="#contact"
+          class="hidden rounded-full bg-lime px-5 py-2.5 text-sm font-black text-ink transition hover:bg-white md:inline-flex"
+        >
+          Brief Project
+        </a>
+
+        <button
+          id="menuBtn"
+          class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-xl md:hidden"
+          type="button"
+        >
+          <i class="bi bi-list text-xl" aria-hidden="true"></i>
+        </button>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-white/10 bg-ink px-5 py-4 md:hidden"
+      >
+        <div class="flex flex-col gap-4 text-sm font-bold text-white/75">
+          <a href="#story" class="mobile-link">Story</a>
+          <a href="#services" class="mobile-link">Layanan</a>
+          <a href="#work" class="mobile-link">Showcase</a>
+          <a href="#process" class="mobile-link">Process</a>
+          <a href="#contact" class="mobile-link">Kontak</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="relative min-h-screen overflow-hidden pt-28">
+        <div class="absolute left-[-12rem] top-20 h-96 w-96 rounded-full bg-flame/30 blur-3xl"></div>
+        <div class="absolute right-[-10rem] top-32 h-[30rem] w-[30rem] rounded-full bg-aqua/20 blur-3xl"></div>
+        <div class="absolute bottom-[-8rem] left-1/3 h-80 w-80 rounded-full bg-violet/20 blur-3xl"></div>
+
+        <div
+          class="relative z-10 mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]"
+        >
+          <div class="reveal">
+            <div
+              class="mb-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-black text-lime"
+            >
+              <span class="h-2.5 w-2.5 rounded-full bg-lime shadow-[0_0_24px_rgba(163,230,53,0.9)]"></span>
+              Paket Custom | 10 Section Eksklusif
+            </div>
+
+            <h1
+              class="gradient-title text-5xl font-black leading-[0.9] tracking-normal sm:text-6xl lg:text-8xl"
+            >
+              Portfolio yang terasa seperti brand campaign.
+            </h1>
+
+            <p class="mt-7 max-w-2xl text-lg leading-8 text-white/68">
+              Template custom untuk creator, consultant, studio, dan founder
+              yang ingin tampil lebih premium. Lengkap dengan storytelling,
+              showcase karya, social proof, offer, FAQ, animasi, dan form brief.
+            </p>
+
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#work"
+                class="inline-flex justify-center rounded-full bg-lime px-7 py-4 font-black text-ink transition hover:bg-white"
+              >
+                Lihat Showcase
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 font-black text-white transition hover:border-lime hover:text-lime"
+              >
+                Mulai Brief
+              </a>
+            </div>
+
+            <div class="mt-12 grid max-w-xl grid-cols-3 gap-4">
+              <div class="glass rounded-3xl p-5">
+                <strong class="block text-3xl font-black text-lime">10</strong>
+                <span class="text-sm font-bold text-white/58">Section</span>
+              </div>
+              <div class="glass rounded-3xl p-5">
+                <strong class="block text-3xl font-black text-aqua">14d</strong>
+                <span class="text-sm font-bold text-white/58">Timeline</span>
+              </div>
+              <div class="glass rounded-3xl p-5">
+                <strong class="block text-3xl font-black text-flame">100%</strong>
+                <span class="text-sm font-bold text-white/58">Custom</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal relative min-h-[620px]">
+            <div
+              class="absolute inset-x-8 top-6 h-[34rem] rotate-3 rounded-[2.5rem] bg-gradient-to-br from-lime/30 via-aqua/20 to-flame/30 blur-sm"
+            ></div>
+            <div
+              class="glass float-card absolute left-4 top-0 z-20 w-56 rounded-[2rem] p-5 shadow-glow"
+            >
+              <p class="text-xs font-black uppercase tracking-[0.18em] text-lime">
+                Moodboard
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <span class="h-14 rounded-2xl bg-lime"></span>
+                <span class="h-14 rounded-2xl bg-aqua"></span>
+                <span class="h-14 rounded-2xl bg-flame"></span>
+              </div>
+              <p class="mt-5 text-sm leading-6 text-white/65">
+                Visual direction dibuat dari karakter dan target audiens.
+              </p>
+            </div>
+            <div
+              class="absolute right-0 top-20 z-10 w-[86%] overflow-hidden rounded-[2.6rem] border border-white/15 bg-white shadow-warm"
+            >
+              <div
+                class="h-[34rem] bg-[linear-gradient(180deg,rgba(7,10,18,0),rgba(7,10,18,0.72)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=80')] bg-cover bg-center"
+              ></div>
+              <div class="absolute bottom-0 left-0 right-0 p-7">
+                <p class="text-sm font-black uppercase tracking-[0.2em] text-lime">
+                  Keira Studio
+                </p>
+                <h2 class="mt-3 text-4xl font-black">Creative direction for digital presence.</h2>
+              </div>
+            </div>
+            <div
+              class="glass float-card absolute bottom-5 right-6 z-30 max-w-xs rounded-[2rem] p-6"
+            >
+              <strong class="text-5xl font-black text-aqua">3.8x</strong>
+              <p class="mt-3 text-sm font-bold leading-6 text-white/68">
+                Lebih siap dipakai untuk pitching, kolaborasi, dan penawaran premium.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="story" class="border-y border-white/10 bg-white/[0.03] py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div class="reveal">
+              <p class="font-black text-lime">01. Brand Story</p>
+              <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+                Bukan cuma halaman profil, tapi cerita yang punya sudut pandang.
+              </h2>
+            </div>
+            <p class="reveal text-lg leading-8 text-white/64">
+              Bagian ini membangun konteks: siapa brand-nya, kenapa berbeda,
+              masalah apa yang diselesaikan, dan kenapa calon klien perlu
+              percaya sejak layar pertama.
+            </p>
+          </div>
+
+          <div class="mt-14 grid gap-5 md:grid-cols-3">
+            <article class="content-card reveal">
+              <span class="card-number">A</span>
+              <h3>Positioning Tajam</h3>
+              <p>Mengubah pesan generik menjadi kalimat yang punya arah dan target.</p>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-number">B</span>
+              <h3>Personal Angle</h3>
+              <p>Mengangkat karakter, prinsip kerja, dan alasan audiens harus peduli.</p>
+            </article>
+            <article class="content-card reveal">
+              <span class="card-number">C</span>
+              <h3>Premium Context</h3>
+              <p>Konten disusun seperti pitch deck digital yang tetap mudah dibaca.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="reveal max-w-3xl">
+            <p class="font-black text-lime">02. Value Proposition</p>
+            <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+              Value utama langsung kelihatan, bukan disembunyikan di bawah.
+            </h2>
+          </div>
+
+          <div class="mt-12 grid gap-5 lg:grid-cols-4">
+            <div class="glass reveal rounded-[2rem] p-7 lg:col-span-2">
+              <h3 class="text-2xl font-black">Untuk brand yang ingin naik kelas</h3>
+              <p class="mt-4 leading-7 text-white/64">
+                Cocok untuk portfolio premium, creative studio, consultant,
+                creator kit, product launch, atau personal website untuk
+                pitching klien bernilai tinggi.
+              </p>
+            </div>
+            <div class="content-card reveal">
+              <span class="card-number">01</span>
+              <h3>Clarity</h3>
+              <p>Pesan utama ringkas, tajam, dan tidak berputar-putar.</p>
+            </div>
+            <div class="content-card reveal">
+              <span class="card-number">02</span>
+              <h3>Trust</h3>
+              <p>Bukti, hasil kerja, dan proses dibuat terlihat meyakinkan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="bg-white text-ink py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="reveal text-center">
+            <p class="font-black text-flame">03. Custom Services</p>
+            <h2 class="mx-auto mt-4 max-w-3xl text-4xl font-black tracking-normal sm:text-5xl">
+              Isi paket custom dibuat lengkap, bukan cuma ganti warna.
+            </h2>
+          </div>
+
+          <div class="mt-14 grid gap-6 md:grid-cols-3">
+            <article class="light-card reveal">
+              <h3>Konsultasi Konsep</h3>
+              <p>Diskusi arah brand, target audiens, referensi visual, dan tujuan utama website.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="light-pill">Moodboard</span>
+                <span class="light-pill">Audience</span>
+                <span class="light-pill">Direction</span>
+              </div>
+            </article>
+            <article class="light-card reveal">
+              <h3>Copywriting Basic</h3>
+              <p>Headline, subheadline, CTA, benefit, dan narasi section dirapikan agar lebih menjual.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="light-pill">Hero Copy</span>
+                <span class="light-pill">CTA</span>
+                <span class="light-pill">Offer</span>
+              </div>
+            </article>
+            <article class="light-card reveal">
+              <h3>Desain Eksklusif</h3>
+              <p>Layout, visual system, komposisi, dan interaksi dibuat sesuai konsep, bukan template umum.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="light-pill">Custom UI</span>
+                <span class="light-pill">Motion</span>
+                <span class="light-pill">Responsive</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+            <div class="reveal max-w-2xl">
+              <p class="font-black text-lime">04. Signature Showcase</p>
+              <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+                Karya unggulan ditampilkan seperti campaign visual.
+              </h2>
+            </div>
+            <div class="reveal flex flex-wrap gap-3">
+              <button class="filter-btn active-filter" data-filter="all">Semua</button>
+              <button class="filter-btn" data-filter="brand">Brand</button>
+              <button class="filter-btn" data-filter="web">Web</button>
+              <button class="filter-btn" data-filter="launch">Launch</button>
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="projectGrid">
+            <article class="project-card reveal" data-category="brand">
+              <div class="project-cover from-lime to-aqua">Identity</div>
+              <div class="p-6">
+                <h3 class="text-2xl font-black">Studio Rebrand</h3>
+                <p class="mt-3 text-white/62">Portfolio studio visual dengan brand story, service deck, dan lead CTA.</p>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="web">
+              <div class="project-cover from-flame to-violet">Website</div>
+              <div class="p-6">
+                <h3 class="text-2xl font-black">Consultant Hub</h3>
+                <p class="mt-3 text-white/62">Website konsultan dengan case study, proses kerja, dan inquiry form.</p>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="launch">
+              <div class="project-cover from-aqua to-violet">Launch</div>
+              <div class="p-6">
+                <h3 class="text-2xl font-black">Creator Kit</h3>
+                <p class="mt-3 text-white/62">Media kit digital untuk sponsor, rate card, dan showcase konten.</p>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="brand">
+              <div class="project-cover from-violet to-lime">Pitch</div>
+              <div class="p-6">
+                <h3 class="text-2xl font-black">Founder Pitch</h3>
+                <p class="mt-3 text-white/62">Halaman presentasi founder untuk validasi produk dan investor intro.</p>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="web">
+              <div class="project-cover from-aqua to-flame">Profile</div>
+              <div class="p-6">
+                <h3 class="text-2xl font-black">Premium Profile</h3>
+                <p class="mt-3 text-white/62">Company profile modern dengan trust section dan WhatsApp flow.</p>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="launch">
+              <div class="project-cover from-lime to-flame">Campaign</div>
+              <div class="p-6">
+                <h3 class="text-2xl font-black">Campaign Page</h3>
+                <p class="mt-3 text-white/62">Microsite campaign dengan countdown, offer, FAQ, dan lead capture.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="overflow-hidden border-y border-white/10 bg-white/[0.04] py-10">
+        <div class="marquee-track flex w-[200%] gap-6 whitespace-nowrap">
+          <span class="marquee-item">Brand Story</span>
+          <span class="marquee-item">Custom Layout</span>
+          <span class="marquee-item">Copywriting Basic</span>
+          <span class="marquee-item">Motion Feel</span>
+          <span class="marquee-item">Consultation</span>
+          <span class="marquee-item">Premium CTA</span>
+          <span class="marquee-item">Brand Story</span>
+          <span class="marquee-item">Custom Layout</span>
+          <span class="marquee-item">Copywriting Basic</span>
+          <span class="marquee-item">Motion Feel</span>
+          <span class="marquee-item">Consultation</span>
+          <span class="marquee-item">Premium CTA</span>
+        </div>
+      </div>
+
+      <section id="process" class="py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="reveal max-w-3xl">
+            <p class="font-black text-lime">06. Process</p>
+            <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+              Alur kerja jelas dari brief sampai launch.
+            </h2>
+          </div>
+
+          <div class="mt-14 grid gap-5 lg:grid-cols-4">
+            <article class="step-card reveal">
+              <span>01</span>
+              <h3>Discovery</h3>
+              <p>Bahas tujuan, referensi, target audiens, aset, dan prioritas section.</p>
+            </article>
+            <article class="step-card reveal">
+              <span>02</span>
+              <h3>Direction</h3>
+              <p>Susun moodboard, struktur konten, tone copy, dan visual direction.</p>
+            </article>
+            <article class="step-card reveal">
+              <span>03</span>
+              <h3>Production</h3>
+              <p>Bangun halaman, responsive state, animasi, dan konten final.</p>
+            </article>
+            <article class="step-card reveal">
+              <span>04</span>
+              <h3>Launch</h3>
+              <p>Final check, revisi ringan, handoff, dan arahan update konten.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white text-ink py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div class="reveal">
+              <p class="font-black text-flame">07. Social Proof</p>
+              <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+                Testimoni dan bukti hasil bikin halaman tidak terasa kosong.
+              </h2>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <article class="rounded-[2rem] bg-slate-50 p-7 shadow-sm reveal">
+                <p class="text-lg font-bold leading-8">
+                  "Konsepnya jauh lebih kuat dari referensi awal. Website kami
+                  langsung terasa seperti brand yang siap pitching."
+                </p>
+                <p class="mt-6 font-black text-flame">Rania, Creative Lead</p>
+              </article>
+              <article class="rounded-[2rem] bg-slate-50 p-7 shadow-sm reveal">
+                <p class="text-lg font-bold leading-8">
+                  "Copy dan flow halamannya bikin calon klien lebih cepat paham
+                  jasa yang kami tawarkan."
+                </p>
+                <p class="mt-6 font-black text-flame">Bima, Consultant</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="reveal text-center">
+            <p class="font-black text-lime">08. Offer</p>
+            <h2 class="mx-auto mt-4 max-w-3xl text-4xl font-black tracking-normal sm:text-5xl">
+              Output paket Custom yang lebih lengkap.
+            </h2>
+          </div>
+
+          <div class="mt-14 grid gap-6 lg:grid-cols-3">
+            <article class="offer-card reveal">
+              <h3>Website 10 Section</h3>
+              <p>Hero, story, value, service, showcase, marquee, process, proof, offer, FAQ, dan contact.</p>
+            </article>
+            <article class="offer-card reveal">
+              <h3>Content Direction</h3>
+              <p>Copywriting basic dan arahan konten agar halaman punya narasi yang utuh.</p>
+            </article>
+            <article class="offer-card reveal">
+              <h3>Custom Visual</h3>
+              <p>Warna, layout, kartu, interaksi, dan animasi ringan disesuaikan dengan konsep.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-white/10 bg-white/[0.04] py-24">
+        <div class="mx-auto max-w-5xl px-5 sm:px-8">
+          <div class="reveal text-center">
+            <p class="font-black text-lime">09. FAQ</p>
+            <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+              Pertanyaan yang biasanya muncul sebelum order.
+            </h2>
+          </div>
+
+          <div class="mt-12 space-y-4">
+            <button class="faq-item reveal" type="button">
+              <span>Apakah bisa request gaya visual sendiri?</span>
+              <strong><i class="bi bi-plus-lg" aria-hidden="true"></i></strong>
+            </button>
+            <div class="faq-panel">
+              Bisa. Referensi visual akan dibahas saat konsultasi konsep agar hasilnya tetap sesuai brand.
+            </div>
+
+            <button class="faq-item reveal" type="button">
+              <span>Apakah harus punya foto profesional?</span>
+              <strong><i class="bi bi-plus-lg" aria-hidden="true"></i></strong>
+            </button>
+            <div class="faq-panel">
+              Tidak wajib. Aset bisa memakai foto existing, mockup, pattern, atau visual pendukung lain.
+            </div>
+
+            <button class="faq-item reveal" type="button">
+              <span>Berapa lama pengerjaannya?</span>
+              <strong><i class="bi bi-plus-lg" aria-hidden="true"></i></strong>
+            </button>
+            <div class="faq-panel">
+              Estimasi 7-14 hari kerja, tergantung kelengkapan aset dan jumlah revisi.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="relative overflow-hidden py-24">
+        <div class="absolute left-[-8rem] top-10 h-80 w-80 rounded-full bg-lime/20 blur-3xl"></div>
+        <div class="absolute right-[-8rem] bottom-10 h-80 w-80 rounded-full bg-flame/20 blur-3xl"></div>
+
+        <div class="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div class="reveal glass rounded-[2.4rem] p-8">
+              <p class="font-black text-lime">10. Contact</p>
+              <h2 class="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+                Siap bikin portofolio yang lebih niat?
+              </h2>
+              <p class="mt-6 leading-8 text-white/65">
+                Kirim brief singkat. Isi bisa diarahkan ke WhatsApp, email,
+                Google Form, atau backend sesuai kebutuhan.
+              </p>
+              <div class="mt-8 space-y-4 text-white/72">
+                <p>Email: hello@keirastudio.com</p>
+                <p>WhatsApp: +62 812-3456-7890</p>
+                <p>Location: Indonesia, remote friendly</p>
+              </div>
+            </div>
+
+            <form id="briefForm" class="reveal rounded-[2.4rem] bg-white p-8 text-ink">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <input class="form-input" id="name" type="text" placeholder="Nama" required />
+                <input class="form-input" id="email" type="email" placeholder="Email" required />
+              </div>
+              <input class="form-input mt-4" id="brand" type="text" placeholder="Nama brand / profesi" required />
+              <select class="form-input mt-4" id="goal" required>
+                <option value="">Tujuan website</option>
+                <option>Personal brand</option>
+                <option>Portfolio premium</option>
+                <option>Studio profile</option>
+                <option>Campaign launch</option>
+              </select>
+              <textarea
+                class="form-input mt-4 min-h-36 resize-none"
+                id="message"
+                placeholder="Ceritakan konsep, referensi, atau kebutuhan section"
+                required
+              ></textarea>
+              <button
+                class="mt-5 w-full rounded-2xl bg-ink px-6 py-4 font-black text-white transition hover:bg-flame"
+                type="submit"
+              >
+                Kirim Brief
+              </button>
+              <p id="formMessage" class="mt-4 hidden text-sm font-black text-green-600"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <button
+      id="toTop"
+      class="hidden fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full bg-lime font-black text-ink shadow-glow transition hover:bg-white"
+      type="button"
+    >
+      <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      const revealElements = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      revealElements.forEach((element) => observer.observe(element));
+
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((btn) => btn.classList.remove("active-filter"));
+          button.classList.add("active-filter");
+
+          const filter = button.getAttribute("data-filter");
+
+          projectCards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+            const isVisible = filter === "all" || filter === category;
+            card.style.display = isVisible ? "block" : "none";
+          });
+        });
+      });
+
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const panel = item.nextElementSibling;
+          const icon = item.querySelector("strong");
+          const isOpen = panel.classList.contains("is-open");
+
+          document.querySelectorAll(".faq-panel").forEach((faqPanel) => {
+            faqPanel.classList.remove("is-open");
+            faqPanel.style.maxHeight = "0";
+          });
+
+          document.querySelectorAll(".faq-item strong").forEach((faqIcon) => {
+            faqIcon.innerHTML = '<i class="bi bi-plus-lg" aria-hidden="true"></i>';
+          });
+
+          if (!isOpen) {
+            panel.classList.add("is-open");
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            icon.innerHTML = '<i class="bi bi-dash-lg" aria-hidden="true"></i>';
+          }
+        });
+      });
+
+      const briefForm = document.getElementById("briefForm");
+      const formMessage = document.getElementById("formMessage");
+
+      briefForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formMessage.textContent =
+          "Brief berhasil disiapkan. Hubungkan form ini ke WhatsApp API, EmailJS, atau backend agar benar-benar terkirim.";
+        formMessage.classList.remove("hidden");
+        briefForm.reset();
+      });
+
+      const toTop = document.getElementById("toTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 600) {
+          toTop.classList.remove("hidden");
+        } else {
+          toTop.classList.add("hidden");
+        }
+      });
+
+      toTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      document.querySelectorAll(".content-card").forEach((card) => {
+        card.className +=
+          " glass rounded-[2rem] p-7 transition hover:-translate-y-1";
+      });
+
+      document.querySelectorAll(".content-card h3").forEach((heading) => {
+        heading.className += " mt-7 text-2xl font-black";
+      });
+
+      document.querySelectorAll(".content-card p").forEach((text) => {
+        text.className += " mt-4 leading-7 text-white/62";
+      });
+
+      document.querySelectorAll(".card-number").forEach((number) => {
+        number.className +=
+          " inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-lime font-black text-ink";
+      });
+
+      document.querySelectorAll(".light-card").forEach((card) => {
+        card.className +=
+          " rounded-[2rem] border border-slate-200 bg-slate-50 p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl";
+      });
+
+      document.querySelectorAll(".light-card h3").forEach((heading) => {
+        heading.className += " text-2xl font-black";
+      });
+
+      document.querySelectorAll(".light-card p").forEach((text) => {
+        text.className += " mt-4 leading-7 text-slate-600";
+      });
+
+      document.querySelectorAll(".light-pill").forEach((pill) => {
+        pill.className +=
+          " rounded-full bg-orange-100 px-3 py-1.5 text-xs font-black text-flame";
+      });
+
+      document.querySelectorAll(".filter-btn").forEach((button) => {
+        button.className +=
+          " rounded-full border border-white/15 px-5 py-2.5 text-sm font-black text-white/70 transition hover:border-lime hover:text-lime";
+      });
+
+      document.querySelectorAll(".active-filter").forEach((button) => {
+        button.classList.add("bg-lime", "text-ink", "border-lime");
+      });
+
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.className +=
+          " overflow-hidden rounded-[2rem] border border-white/12 bg-white/7 transition hover:-translate-y-1 hover:shadow-glow";
+      });
+
+      document.querySelectorAll(".project-cover").forEach((cover) => {
+        cover.className +=
+          " flex h-56 items-center justify-center bg-gradient-to-br text-4xl font-black text-ink";
+      });
+
+      document.querySelectorAll(".marquee-item").forEach((item) => {
+        item.className +=
+          " rounded-full border border-white/12 bg-white/6 px-8 py-4 text-xl font-black text-white/70";
+      });
+
+      document.querySelectorAll(".step-card").forEach((card) => {
+        card.className +=
+          " glass rounded-[2rem] p-7 transition hover:-translate-y-1";
+      });
+
+      document.querySelectorAll(".step-card span").forEach((number) => {
+        number.className += " text-sm font-black text-lime";
+      });
+
+      document.querySelectorAll(".step-card h3").forEach((heading) => {
+        heading.className += " mt-12 text-2xl font-black";
+      });
+
+      document.querySelectorAll(".step-card p").forEach((text) => {
+        text.className += " mt-4 leading-7 text-white/62";
+      });
+
+      document.querySelectorAll(".offer-card").forEach((card) => {
+        card.className +=
+          " rounded-[2rem] border border-white/12 bg-white/7 p-8 transition hover:-translate-y-1";
+      });
+
+      document.querySelectorAll(".offer-card h3").forEach((heading) => {
+        heading.className += " text-2xl font-black text-lime";
+      });
+
+      document.querySelectorAll(".offer-card p").forEach((text) => {
+        text.className += " mt-4 leading-7 text-white/65";
+      });
+
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.className +=
+          " flex w-full items-center justify-between rounded-2xl border border-white/12 bg-white/7 px-6 py-5 text-left text-lg font-black transition hover:border-lime";
+      });
+
+      document.querySelectorAll(".faq-panel").forEach((panel) => {
+        panel.className +=
+          " max-h-0 overflow-hidden px-6 text-white/65 transition-all duration-300";
+      });
+
+      document.querySelectorAll(".form-input").forEach((input) => {
+        input.className +=
+          " w-full rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 font-bold outline-none transition focus:border-flame focus:ring-4 focus:ring-orange-100";
+      });
+    </script>
+  </body>
+</html>

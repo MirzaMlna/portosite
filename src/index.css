@@ -29,35 +29,3 @@ body {
 .shadow-soft {
   box-shadow: 0 24px 70px rgba(22, 39, 90, 0.14);
 }
-
-.template-preview-frame {
-  position: relative;
-}
-
-.template-preview-frame:fullscreen,
-.template-preview-frame.is-fullscreen {
-  width: 100vw;
-  max-width: none;
-  height: 100vh;
-  border-radius: 0;
-  background: #ffffff;
-}
-
-.template-preview-frame:fullscreen iframe,
-.template-preview-frame.is-fullscreen iframe {
-  height: 100vh;
-  min-height: 0;
-}
-
-.template-preview-frame.is-fullscreen {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-}
-
-.template-preview-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 2;
-}
