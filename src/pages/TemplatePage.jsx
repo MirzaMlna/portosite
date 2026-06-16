@@ -23,17 +23,14 @@ const templates = {
   "paket-starter": {
     title: "Contoh Paket Starter",
     html: paketStarterTemplate,
-    backPath: "/#paket",
   },
   "paket-professional": {
     title: "Contoh Paket Professional",
     html: paketProfessionalTemplate,
-    backPath: "/#paket",
   },
   "paket-custom": {
     title: "Contoh Paket Custom",
     html: paketCustomTemplate,
-    backPath: "/#paket",
   },
 };
 
@@ -57,12 +54,10 @@ export default function TemplatePage() {
     );
   }
 
-  const backPath = template.backPath ?? "/contoh";
-
   return (
     <main className="relative h-screen overflow-hidden bg-white">
       <Link
-        to={backPath}
+        to="/#contoh"
         className="fixed left-4 top-4 z-[9999] inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-black text-navy shadow-soft transition hover:-translate-y-0.5 hover:bg-orange hover:text-white"
       >
         <i className="bi bi-arrow-left mr-2" aria-hidden="true" />
