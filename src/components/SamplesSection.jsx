@@ -11,7 +11,7 @@ const sampleItems = [
     description:
       "Portfolio rapi untuk profil mahasiswa, pengalaman, skill, dan kontak.",
     features: ["Profil singkat", "Pengalaman", "Skill", "Responsive"],
-    templatePath: "/contoh/template/mahasiswa",
+    templatePath: "https://mirzamlna.github.io/portfolio/",
   },
   {
     id: 2,
