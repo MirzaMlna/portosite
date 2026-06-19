@@ -31,6 +31,26 @@ const portfolioSamples = [
     features: ["Produk", "Benefit", "Testimoni", "WhatsApp CTA"],
     templatePath: "/contoh/template/umkm",
   },
+  {
+    id: 4,
+    name: "Client 1 Portfolio",
+    role: "Paket Starter",
+    description:
+      "Portofolio personal ringkas dengan hero, tentang, skill, project mini, dan kontak.",
+    gradient: "from-sky-500 to-teal-500",
+    features: ["Profil", "Skill", "Project mini", "Kontak"],
+    templatePath: "/contoh/template/client1-starter",
+  },
+  {
+    id: 5,
+    name: "Client 2 Portfolio",
+    role: "Paket Professional",
+    description:
+      "Portofolio profesional lengkap dengan layanan, showcase, pengalaman, testimoni, dan form brief.",
+    gradient: "from-rose-500 to-orange-500",
+    features: ["Layanan", "Showcase", "Timeline", "Form brief"],
+    templatePath: "/contoh/template/client2-professional",
+  },
 ];
 
 export default function WebsiteExamplesGridSection() {

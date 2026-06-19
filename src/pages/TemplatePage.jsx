@@ -6,6 +6,8 @@ import umkmTemplate from "./templates/template4-umkm.html?raw";
 import paketStarterTemplate from "./templates/paket-starter.html?raw";
 import paketProfessionalTemplate from "./templates/paket-professional.html?raw";
 import paketCustomTemplate from "./templates/paket-custom.html?raw";
+import clientStarterTemplate from "./portofolio/client1/index.html?raw";
+import clientProfessionalTemplate from "./portofolio/client2/index.html?raw";
 
 const templates = {
   mahasiswa: {
@@ -31,6 +33,22 @@ const templates = {
   "paket-custom": {
     title: "Contoh Paket Custom",
     html: paketCustomTemplate,
+  },
+  "client1-starter": {
+    title: "Client 1 - Paket Starter",
+    html: clientStarterTemplate,
+  },
+  "client2-professional": {
+    title: "Client 2 - Paket Professional",
+    html: clientProfessionalTemplate,
+  },
+  client1: {
+    title: "Client 1 - Paket Starter",
+    html: clientStarterTemplate,
+  },
+  client2: {
+    title: "Client 2 - Paket Professional",
+    html: clientProfessionalTemplate,
   },
 };
 

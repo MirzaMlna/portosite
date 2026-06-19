@@ -9,7 +9,9 @@ import TemplatePage from "./pages/TemplatePage.jsx";
 
 export default function App() {
   const location = useLocation();
-  const isTemplatePage = location.pathname.startsWith("/contoh/template/");
+  const isTemplatePage =
+    location.pathname.startsWith("/contoh/template/") ||
+    location.pathname.startsWith("/portofolio/");
 
   return (
     <div className="bg-white text-slate-900 overflow-x-hidden">
@@ -19,6 +21,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contoh" element={<WebsiteExamples />} />
         <Route path="/contoh/template/:templateSlug" element={<TemplatePage />} />
+        <Route path="/portofolio/:templateSlug" element={<TemplatePage />} />
       </Routes>
       {!isTemplatePage && <Footer />}
     </div>

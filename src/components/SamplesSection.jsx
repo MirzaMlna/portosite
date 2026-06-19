@@ -89,7 +89,7 @@ export default function SamplesSection() {
                 </div>
 
                 <span className="block w-full bg-orange/10 text-orange text-center font-black py-3 rounded-xl group-hover:bg-orange group-hover:text-white transition">
-                  Lihat Template
+                  Lihat Contoh
                 </span>
               </div>
             </Link>
