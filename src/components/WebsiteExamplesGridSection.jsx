@@ -36,19 +36,19 @@ const portfolioSamples = [
     name: "Client 1 Portfolio",
     role: "Paket Starter",
     description:
-      "Portofolio personal ringkas dengan hero, tentang, skill, project mini, dan kontak.",
+      "Portofolio personal ringkas dengan hero, about, skill, dan resume.",
     gradient: "from-sky-500 to-teal-500",
-    features: ["Profil", "Skill", "Project mini", "Kontak"],
+    features: ["Hero", "About", "Skill", "Resume"],
     templatePath: "/contoh/template/client1-starter",
   },
   {
     id: 5,
     name: "Client 2 Portfolio",
-    role: "Paket Professional",
+    role: "Paket Profesional",
     description:
-      "Portofolio profesional lengkap dengan layanan, showcase, pengalaman, testimoni, dan form brief.",
+      "Portofolio profesional lengkap dengan hero, about, skill, resume, project, dan kontak.",
     gradient: "from-rose-500 to-orange-500",
-    features: ["Layanan", "Showcase", "Timeline", "Form brief"],
+    features: ["Hero", "About", "Skill", "Resume", "Project", "Kontak"],
     templatePath: "/contoh/template/client2-professional",
   },
 ];

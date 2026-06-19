@@ -27,7 +27,7 @@ const templates = {
     html: paketStarterTemplate,
   },
   "paket-professional": {
-    title: "Contoh Paket Professional",
+    title: "Contoh Paket Profesional",
     html: paketProfessionalTemplate,
   },
   "paket-custom": {
@@ -39,7 +39,7 @@ const templates = {
     html: clientStarterTemplate,
   },
   "client2-professional": {
-    title: "Client 2 - Paket Professional",
+    title: "Client 2 - Paket Profesional",
     html: clientProfessionalTemplate,
   },
   client1: {
@@ -47,7 +47,7 @@ const templates = {
     html: clientStarterTemplate,
   },
   client2: {
-    title: "Client 2 - Paket Professional",
+    title: "Client 2 - Paket Profesional",
     html: clientProfessionalTemplate,
   },
 };

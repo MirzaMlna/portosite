@@ -29,6 +29,30 @@ template4-umkm.html
 
 Gunakan file di atas sebagai bahan awal. Jangan edit file template utama langsung untuk pesanan klien. Salin dulu ke folder kerja klien, lalu edit hasil salinannya.
 
+## Ketentuan Paket Section
+
+Paket Starter berisi 4 section:
+
+```text
+Hero
+About
+Skill
+Resume
+```
+
+Paket Profesional berisi 6 section:
+
+```text
+Hero
+About
+Skill
+Resume
+Project
+Kontak
+```
+
+Saat menawarkan paket ke klien, gunakan ketentuan section di atas sebagai acuan utama. Jangan menambahkan section di luar paket kecuali klien memilih paket Custom atau ada kesepakatan tambahan.
+
 ## Lokasi Folder Kerja
 
 Folder hasil kerja pesanan bisa dibuat sebagai folder terpisah dari template utama.
@@ -202,11 +226,12 @@ Bagian yang biasanya diedit:
 - Nama klien
 - Profesi atau posisi
 - Deskripsi singkat
-- Tentang saya
+- Hero
+- About atau tentang saya
 - Skill
-- Pengalaman
-- Project
-- Kontak
+- Resume
+- Project, khusus paket Profesional atau Custom
+- Kontak, khusus paket Profesional atau Custom
 - Link WhatsApp, Instagram, LinkedIn, GitHub, atau email
 - Path gambar di tag `<img>`
 
